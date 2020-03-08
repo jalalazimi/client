@@ -43,135 +43,9 @@ var defaultConfig = require('tailwindcss/defaultConfig')()
 |
 */
 
-var colors = {
-  'transparent': 'transparent',
-
-  'black': '#000000',
-  'grey-darkest': '#444444',
-  'grey-darker': '#666666',
-  'grey-dark': '#888888',
-  'grey': '#b1b1b1',
-  'grey-light': '#d9d9d9',
-  'grey-lighter': '#f2f2f2',
-  'grey-lightest': '#fafafa',
-  'white': '#ffffff',
-
-  'red-darkest': '#420806',
-  'red-darker': '#6a1b19',
-  'red-dark': '#cc1f1a',
-  'red': '#e3342f',
-  'red-light': '#ef5753',
-  'red-lighter': '#f9acaa',
-  'red-lightest': '#fcebea',
-
-  'orange-darkest': '#4d370e',
-  'orange-darker': '#7c5b1b',
-  'orange-dark': '#ce972d',
-  'orange': '#efb33d',
-  'orange-light': '#fec93e',
-  'orange-lighter': '#ffe7b2',
-  'orange-lightest': '#fff9ed',
-
-  'yellow-darkest': '#453411',
-  'yellow-darker': '#684f1d',
-  'yellow-dark': '#f2d024',
-  'yellow': '#ffed4a',
-  'yellow-light': '#fff382',
-  'yellow-lighter': '#fff9c2',
-  'yellow-lightest': '#fcfbeb',
-
-  'green-darkest': '#032d19',
-  'green-darker': '#0b4228',
-  'green-dark': '#1f9d55',
-  'green': '#38c172',
-  'green-light': '#51d88a',
-  'green-lighter': '#a2f5bf',
-  'green-lightest': '#e3fcec',
-
-  'teal-darkest': '#0d3331',
-  'teal-darker': '#174e4b',
-  'teal-dark': '#38a89d',
-  'teal': '#4dc0b5',
-  'teal-light': '#64d5ca',
-  'teal-lighter': '#a0f0ed',
-  'teal-lightest': '#e8fffe',
-
-  'blue-darkest': '#002056',
-  'blue-darker': '#003a9a',
-  'blue-dark': '#2d6fdf',
-  'blue': '#4285f4',
-  'blue-light': '#77a9ff',
-  'blue-lighter': '#c2d9ff',
-  'blue-lightest': '#f3f8ff',
-
-  'indigo-darkest': '#191e38',
-  'indigo-darker': '#2f365f',
-  'indigo-dark': '#5661b3',
-  'indigo': '#6574cd',
-  'indigo-light': '#7886d7',
-  'indigo-lighter': '#b2b7ff',
-  'indigo-lightest': '#e6e8ff',
-
-  'purple-darkest': '#1f133f',
-  'purple-darker': '#352465',
-  'purple-dark': '#794acf',
-  'purple': '#9561e2',
-  'purple-light': '#a779e9',
-  'purple-lighter': '#d6bbfc',
-  'purple-lightest': '#f3ebff',
-
-  'pink-darkest': '#45051e',
-  'pink-darker': '#72173a',
-  'pink-dark': '#eb5286',
-  'pink': '#f66d9b',
-  'pink-light': '#fa7ea8',
-  'pink-lighter': '#ffbbca',
-  'pink-lightest': '#ffebef',
-}
 
 module.exports = {
 
-  /*
-  |-----------------------------------------------------------------------------
-  | Colors                                  https://tailwindcss.com/docs/colors
-  |-----------------------------------------------------------------------------
-  |
-  | The color palette defined above is also assigned to the "colors" key of
-  | your Tailwind config. This makes it easy to access them in your CSS
-  | using Tailwind's config helper. For example:
-  |
-  | .error { color: config('colors.red') }
-  |
-  */
-
-  colors: colors,
-
-
-  /*
-  |-----------------------------------------------------------------------------
-  | Screens                      https://tailwindcss.com/docs/responsive-design
-  |-----------------------------------------------------------------------------
-  |
-  | Screens in Tailwind are translated to CSS media queries. They define the
-  | responsive breakpoints for your project. By default Tailwind takes a
-  | "mobile first" approach, where each screen size represents a minimum
-  | viewport width. Feel free to have as few or as many screens as you
-  | want, naming them in whatever way you'd prefer for your project.
-  |
-  | Tailwind also allows for more complex screen definitions, which can be
-  | useful in certain situations. Be sure to see the full responsive
-  | documentation for a complete list of options.
-  |
-  | Class name: .{screen}:{utility}
-  |
-  */
-
-  screens: {
-    'sm': '576px',
-    'md': '768px',
-    'lg': '992px',
-    'xl': '1200px',
-  },
 
 
   /*
@@ -750,13 +624,7 @@ module.exports = {
   |
   */
 
-  opacity: {
-    '0': '0',
-    '25': '.25',
-    '50': '.5',
-    '75': '.75',
-    '100': '1',
-  },
+
 
 
   /*

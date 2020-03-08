@@ -14,7 +14,7 @@ const TabItem = ({ label, value, isRefined, refine, createURL }) => (
   </a>
 );
 
-const Tabs = ({ attributeName, currentRefinement, items, ...otherProps }) => (
+const Index = ({ attributeName, currentRefinement, items, ...otherProps }) => (
   <div className="inline-block">
     {items.length > 0 && (
       <TabItem label="All" value={null} isRefined={!currentRefinement} {...otherProps} />
@@ -24,4 +24,4 @@ const Tabs = ({ attributeName, currentRefinement, items, ...otherProps }) => (
   </div>
 );
 
-export default connectMenu(Tabs);
+export default connectMenu(Index);

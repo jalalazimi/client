@@ -21,7 +21,7 @@ const Delimiter = connectStateResults(
     ) : null
 );
 
-const Hits = connectInfiniteHits(({ hits, hasMore, refine }) => (
+const Index = connectInfiniteHits(({ hits, hasMore, refine }) => (
   <div>
     <NoResults />
 
@@ -38,4 +38,4 @@ const Hits = connectInfiniteHits(({ hits, hasMore, refine }) => (
   </div>
 ));
 
-export default Hits;
+export default Index;

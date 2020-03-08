@@ -10,7 +10,7 @@ import "react-simple-dropdown/styles/Dropdown.css";
 import licenseUrl from "./license";
 import pluralize from "./pluralize";
 import humanizedNumber from "./humanizedNumber";
-import Highlight from "./Highlight";
+import Highlight from "../Highlight";
 
 // Get these averages from the backend with `Package.published.average("stars")`
 // A package is considered popular if any of the stats is above average

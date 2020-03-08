@@ -1,7 +1,7 @@
 import React from "react";
 import { connectSortBy } from "react-instantsearch/connectors";
 
-const SortBy = connectSortBy(({ items, currentRefinement, refine }) => (
+const Index = connectSortBy(({ items, currentRefinement, refine }) => (
   <div className="inline-block relative m-3 mt-0 text-sm">
     <select
       className="block appearance-none bg-transparent text-grey-dark cursor-pointer pr-4 tracking-tight"
@@ -24,4 +24,4 @@ const SortBy = connectSortBy(({ items, currentRefinement, refine }) => (
   </div>
 ));
 
-export default SortBy;
+export default Index;

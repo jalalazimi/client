@@ -21,7 +21,7 @@ const CheckBoxItem = ({ label, value, count, isRefined, refine }) => (
   </div>
 );
 
-const CheckboxList = connectRefinementList(({ items, attributeName, refine, createURL }) => (
+const Index = connectRefinementList(({ items, attributeName, refine, createURL }) => (
   <div>
     {items.length === 0 && <span className="text-grey-dark">No filters available</span>}
 
@@ -31,4 +31,4 @@ const CheckboxList = connectRefinementList(({ items, attributeName, refine, crea
   </div>
 ));
 
-export default CheckboxList;
+export default Index;

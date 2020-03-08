@@ -1,0 +1,36 @@
+import React from 'react';
+import Document, {
+  Head,
+  Main,
+  NextScript,
+} from 'next/document';
+
+export default class MyDocument extends Document {
+  static async getInitialProps(ctx) {
+    const initialProps = await Document.getInitialProps(ctx);
+
+    return {...initialProps};
+  }
+
+  render() {
+    return (
+      <html lang="en">
+      <Head>
+        <meta charSet="utf-8"/>
+        <meta name="referrer" content="origin-when-cross-origin"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <link href="https://fonts.googleapis.com/css?family=Karla:400,700" rel="stylesheet"/>
+        <link rel="manifest" href="/manifest.json"/>
+        <link rel="icon" href="/favicon.ico"/>
+        <meta name="theme-color" content="#181f2c"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="#181f2c"/>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-71724704-1"/>
+      </Head>
+      <body>
+      <Main/>
+      <NextScript/>
+      </body>
+      </html>
+    );
+  }
+}

@@ -1,22 +1,19 @@
 import React from "react";
 
-import ClearAll from "./ClearAll";
-import Hits from "./Hits";
-import Menu from "./Menu";
-import Panel from "./Panel";
-import CheckboxList from "./CheckboxList";
-import SearchBox from "./SearchBox";
-import SearchPoweredBy from "./SearchPoweredBy";
-import SortBy from "./SortBy";
-import Tabs from "./Tabs";
-import Topbar from "./Topbar";
+import ClearAll from "../ClearAll";
+import Hits from "../Hits";
+import Menu from "../Menu";
+import Panel from "../Panel";
+import CheckboxList from "../CheckboxList";
+import SearchBox from "../SearchBox";
+import SearchPoweredBy from "../SearchPoweredBy";
+import SortBy from "../SortBy";
+import Tabs from "../Tabs";
+import Topbar from "../Topbar";
 import orderBy from "lodash.orderby";
-import Advertisement from "./Advertisement";
+import Advertisement from "../Advertisement";
 
-import jess from "./images/jess.svg";
-import jessSmall from "./images/jess-small.svg";
-
-const Search = ({ isHome, currentCollection, currentQuery, collectionsOrder, sortOptions }) => (
+const Index = ({ isHome, currentCollection, currentQuery, collectionsOrder, sortOptions }) => (
   <div>
     <Topbar />
 
@@ -28,7 +25,7 @@ const Search = ({ isHome, currentCollection, currentQuery, collectionsOrder, sor
       <div className={isHome ? "text-center m-8 max-w-md w-full select-none" : "relative m-4 mb-1 select-none"}>
         {isHome ? (
           <img
-            src={jess}
+            src="images/jess.svg"
             width="128"
             height="152"
             className="m-8"
@@ -38,7 +35,7 @@ const Search = ({ isHome, currentCollection, currentQuery, collectionsOrder, sor
         ) : (
           <a href="/">
             <img
-              src={jessSmall}
+              src="images/jess-small.svg"
               width="50"
               height="50"
               className="absolute pin-l"
@@ -124,4 +121,4 @@ const Search = ({ isHome, currentCollection, currentQuery, collectionsOrder, sor
   </div>
 );
 
-export default Search;
+export default Index;

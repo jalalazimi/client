@@ -1,7 +1,7 @@
 import React from "react";
 import { connectHighlight } from "react-instantsearch/connectors";
 
-const Highlight = connectHighlight(({ highlight, attributeName, hit, highlightProperty }) => {
+const Index = connectHighlight(({ highlight, attributeName, hit, highlightProperty }) => {
   const parsedHit = highlight({
     attributeName,
     hit,
@@ -14,4 +14,4 @@ const Highlight = connectHighlight(({ highlight, attributeName, hit, highlightPr
   return <span dangerouslySetInnerHTML={{ __html: highlightedHits.join("") }} />;
 });
 
-export default Highlight;
+export default Index;

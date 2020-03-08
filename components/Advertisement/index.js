@@ -5,7 +5,7 @@ import "./Advertisement.css";
 let initialized = process.env.REACT_APP_SHOW_ADS !== "true";
 let pageViews = 0;
 
-class Advertisement extends Component {
+class Index extends Component {
   constructor(props) {
     super(props);
     this.state = { initialized: false };
@@ -68,4 +68,4 @@ class Advertisement extends Component {
   }
 }
 
-export default Advertisement;
+export default Index;

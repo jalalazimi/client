@@ -1,7 +1,7 @@
 import React from "react";
 import { connectCurrentRefinements } from "react-instantsearch/connectors";
 
-const ClearAll = connectCurrentRefinements(
+const Index = connectCurrentRefinements(
   ({ items, refine }) =>
     items.length > 0 && (
       <button
@@ -12,4 +12,4 @@ const ClearAll = connectCurrentRefinements(
     )
 );
 
-export default ClearAll;
+export default Index;

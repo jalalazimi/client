@@ -17,7 +17,7 @@ const MenuItem = ({ label, value, count, isRefined, refine, createURL }) => (
   </a>
 );
 
-const Menu = ({ attributeName, currentRefinement, items, ...otherProps }) => (
+const Index = ({ attributeName, currentRefinement, items, ...otherProps }) => (
   <div>
     {items.length === 0 && <span className="text-grey-dark">No filters available</span>}
 
@@ -34,4 +34,4 @@ const Menu = ({ attributeName, currentRefinement, items, ...otherProps }) => (
   </div>
 );
 
-export default connectMenu(Menu);
+export default connectMenu(Index);

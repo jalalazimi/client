@@ -1,7 +1,7 @@
 import React from "react";
 import { connectSearchBox } from "react-instantsearch/connectors";
 
-const SearchBox = connectSearchBox(({ currentRefinement, refine }) => (
+const Index = connectSearchBox(({ currentRefinement, refine }) => (
   <form
     noValidate
     className="bg-white border rounded py-2 px-3 h-12 flex items-center shadow"
@@ -38,4 +38,4 @@ const SearchBox = connectSearchBox(({ currentRefinement, refine }) => (
   </form>
 ));
 
-export default SearchBox;
+export default Index;

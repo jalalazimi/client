@@ -41,10 +41,12 @@ function Algolia(props) {
   return <InstantSearch
     searchClient={props.searchClient}
     resultsState={props.resultsState}
-    indexName={process.env.REACT_APP_INDEX_BY_UPDATED_AT}
+    indexName={props.indexName}
     searchState={props.searchState}
     onSearchStateChange={props.onSearchStateChange}
-    createURL={props.createURL}>
+    createURL={props.createURL}
+    {...props}
+  >
     <Configure attributesToRetrieve={attributesToRetrieve}/>
     <Search
       sortOptions={sortOptions}

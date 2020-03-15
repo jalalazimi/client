@@ -17,7 +17,7 @@ const MenuItem = ({ label, value, count, isRefined, refine, createURL }) => (
   </a>
 );
 
-const Index = ({ attributeName, currentRefinement, items, ...otherProps }) => (
+const Index = ({ attribute, currentRefinement, items, ...otherProps }) => (
   <div>
     {items.length === 0 && <span className="text-grey-dark">No filters available</span>}
 

@@ -63,7 +63,7 @@ function Search({currentCollection, currentQuery, collectionsOrder, sortOptions}
           <div className="mb-8">
             <Panel title="Styling">
               <CheckboxList
-                attributeName="styling"
+                attribute="styling"
                 operator="and"
                 transformItems={items => orderBy(items, ["label", "count"], ["asc", "desc"])}
               />
@@ -75,7 +75,7 @@ function Search({currentCollection, currentQuery, collectionsOrder, sortOptions}
           <div className="mb-8">
             <Panel title="Compatibility">
               <CheckboxList
-                attributeName="compatibility"
+                attribute="compatibility"
                 transformItems={items =>
                   orderBy(items, [item => item.label.toLowerCase()], ["asc"])
                 }
@@ -87,7 +87,7 @@ function Search({currentCollection, currentQuery, collectionsOrder, sortOptions}
         <div className="mb-8">
           <Panel title="Categories">
             <Menu
-              attributeName="categories"
+              attribute="categories"
               showMore
               limitMax={25}
               transformItems={items => orderBy(items, ["label", "count"], ["asc", "desc"])}

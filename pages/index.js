@@ -17,6 +17,7 @@ const sortOptions = [
   {value: process.env.REACT_APP_INDEX_BY_RELEVANCE, label: "relevance"},
   {value: process.env.REACT_APP_INDEX_BY_UPDATED_AT, label: "updated"},
 ];
+const filterDelimiter = ".";
 const DEFAULT_PROPS = {
   searchClient,
   indexName: process.env.REACT_APP_INDEX_BY_UPDATED_AT,
@@ -58,7 +59,6 @@ class Home extends React.PureComponent {
       searchState,
     };
   }
-
 
   static getDerivedStateFromProps(props, state) {
     if (!isEqual(state.lastRouter, props.router)) {

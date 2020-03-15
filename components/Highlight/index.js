@@ -1,17 +1,18 @@
 import React from "react";
-import { connectHighlight } from "react-instantsearch/connectors";
+import { connectHighlight } from 'react-instantsearch-dom';
 
-const Index = connectHighlight(({ highlight, attributeName, hit, highlightProperty }) => {
+const Highlight = ({highlight, attribute, hit}) => {
   const parsedHit = highlight({
-    attributeName,
+    attribute,
     hit,
     highlightProperty: "_highlightResult",
   });
-  const highlightedHits = parsedHit.map(part => {
-    if (part.isHighlighted) return `<mark>${part.value}</mark>`;
-    return part.value;
-  });
-  return <span dangerouslySetInnerHTML={{ __html: highlightedHits.join("") }} />;
-});
+  return parsedHit.map((part, index) => part.isHighlighted ? (
+      <mark key={index}>{part.value}</mark>
+    ) : (
+      <span key={index}>{part.value}</span>
+    )
+  );
+};
 
-export default Index;
+export default connectHighlight(Highlight);

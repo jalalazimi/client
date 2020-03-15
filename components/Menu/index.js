@@ -1,5 +1,5 @@
 import React from "react";
-import { connectMenu } from "react-instantsearch/connectors";
+import { connectMenu } from "react-instantsearch-dom";
 
 const MenuItem = ({ label, value, count, isRefined, refine, createURL }) => (
   <a

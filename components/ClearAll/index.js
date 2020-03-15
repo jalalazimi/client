@@ -1,5 +1,5 @@
 import React from "react";
-import { connectCurrentRefinements } from "react-instantsearch/connectors";
+import { connectCurrentRefinements } from "react-instantsearch-dom";
 
 const Index = connectCurrentRefinements(
   ({ items, refine }) =>

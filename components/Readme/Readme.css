@@ -4,6 +4,10 @@
   color: #000;
 }
 
+.markdown-body img{
+    display: inherit;
+}
+
 /* We convert headings into anchored hyperlinks, but hide it visually for now */
 .markdown-body h1 a[href^="#"],
 .markdown-body h2 a[href^="#"],

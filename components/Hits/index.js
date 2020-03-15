@@ -1,5 +1,5 @@
 import React from "react";
-import { connectInfiniteHits, connectStateResults } from "react-instantsearch/connectors";
+import { connectInfiniteHits, connectStateResults } from "react-instantsearch-dom";
 
 import humanizedNumber from "./humanizedNumber";
 import Hit from "./Hit";
@@ -21,7 +21,7 @@ const Delimiter = connectStateResults(
     ) : null
 );
 
-const Index = connectInfiniteHits(({ hits, hasMore, refine }) => (
+const Hits = connectInfiniteHits(({ hits, hasMore, refine }) => (
   <div>
     <NoResults />
 
@@ -38,4 +38,4 @@ const Index = connectInfiniteHits(({ hits, hasMore, refine }) => (
   </div>
 ));
 
-export default Index;
+export default Hits;

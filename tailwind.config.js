@@ -1,4 +1,4 @@
-var colors = {
+const colors = {
   'transparent': 'transparent',
 
   'black': '#000000',
@@ -86,20 +86,43 @@ var colors = {
 
 module.exports = {
   theme: {
+    fontFamily: {
+      'sans': [
+        'Karla',
+        '-apple-system',
+        'BlinkMacSystemFont',
+        'Segoe UI',
+        'Roboto',
+        'Oxygen',
+        'Ubuntu',
+        'Cantarell',
+        'Fira Sans',
+        'Droid Sans',
+        'Helvetica Neue',
+        'sans-serif',
+      ],
+      'serif': [
+        'Constantia',
+        'Lucida Bright',
+        'Lucidabright',
+        'Lucida Serif',
+        'Lucida',
+        'DejaVu Serif',
+        'Bitstream Vera Serif',
+        'Liberation Serif',
+        'Georgia',
+        'serif',
+      ],
+      'mono': [
+        'Menlo',
+        'Monaco',
+        'Consolas',
+        'Liberation Mono',
+        'Courier New',
+        'monospace',
+      ]
+    },
     colors: colors,
-    screens: {
-      'sm': '576px',
-      'md': '768px',
-      'lg': '992px',
-      'xl': '1200px',
-    },
-    opacity: {
-      '0': '0',
-      '25': '.25',
-      '50': '.5',
-      '75': '.75',
-      '100': '1',
-    },
   },
   variants: {},
   plugins: [],

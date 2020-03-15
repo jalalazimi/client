@@ -1,5 +1,5 @@
 import React from "react";
-import { connectRefinementList } from "react-instantsearch/connectors";
+import { connectRefinementList } from "react-instantsearch-dom";
 
 const CheckBoxItem = ({ label, value, count, isRefined, refine }) => (
   <div className="block mb-1">

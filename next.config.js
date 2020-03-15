@@ -2,16 +2,11 @@ const withCSS = require('@zeit/next-css');
 const compose = require('next-compose');
 const withBundleAnalyzer = require("@zeit/next-bundle-analyzer");
 const withOffline = require('next-offline');
-const StyledJSXWebpackLoader = require('styled-jsx/webpack').loader;
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const dev = process.env.NODE_ENV !== 'production';
-const nextEnv = require('next-env');
-const dotenvLoad = require('dotenv-load');
-
-dotenvLoad();
-
-const withNextEnv = nextEnv();
+const webpack = require('webpack');
+require('dotenv').config()
 
 const bundleAnalyzerConfig = {
   analyzeServer: ["server", "both"].includes(process.env.BUNDLE_ANALYZE),
@@ -91,13 +86,17 @@ const offlineConfig = {
 };
 
 module.exports = compose([
-  [withNextEnv],
   [withCSS],
   [withOffline, offlineConfig],
   [withBundleAnalyzer, bundleAnalyzerConfig],
 
   {
     webpack: (config, {defaultLoaders}) => {
+
+      config.plugins.push(
+        new webpack.EnvironmentPlugin(process.env)
+      );
+
       config.node = {
         fs: 'empty'
       };

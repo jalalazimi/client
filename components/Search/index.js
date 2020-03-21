@@ -12,7 +12,7 @@ import orderBy from "lodash.orderby";
 import Advertisement from "../Advertisement";
 
 function Search({currentCollection, currentQuery, collectionsOrder, sortOptions}) {
-  return <>
+  return <div>
     <div className="bg-grey-lighter border-b border-grey-light  overflow-hidden">
       <div className="relative m-4 mb-1 select-none">
         <a href="/">
@@ -95,10 +95,8 @@ function Search({currentCollection, currentQuery, collectionsOrder, sortOptions}
           </Panel>
         </div>
       </div>
-
     </div>
-
-  </>;
+  </div>;
 }
 
 export default Search;

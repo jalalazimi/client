@@ -43,7 +43,7 @@ const Stars = ({count}) => (
     aria-label={`${count} ${pluralize(count, "star")} on GitHub${
       count > averages.stars ? " (above average)" : ""
     }`}>
-    <svg xmlns="http://www.w3.org/2000/svg" width="13" className="inline" height="12" viewBox="0 0 13 12">
+    <svg xmlns="http://www.w3.org/2000/svg" width="13" className="inline fill-current" height="12" viewBox="0 0 13 12">
       <polygon
         points="6.285 9.644 10.169 12 9.138 7.561 12.57 4.573 8.051 4.188 6.285 .001 4.519 4.188 0 4.573 3.432 7.561 2.401 12"/>
     </svg>
@@ -60,7 +60,7 @@ const Downloads = ({count}) => (
     aria-label={`${count} ${pluralize(count, "download")} from npm\nin the last 30 days${
       count > averages.downloads ? " (above average)" : ""
     }`}>
-    <svg xmlns="http://www.w3.org/2000/svg" className="inline" width="12" height="12" viewBox="0 0 12 12">
+    <svg xmlns="http://www.w3.org/2000/svg" className="inline fill-current" width="12" height="12" viewBox="0 0 12 12">
       <polygon points="12 6 9 6 9 1 3 1 3 6 0 6 6 12"/>
     </svg>
     {" "}
@@ -78,7 +78,7 @@ const Dependents = ({count}) => (
       "depends",
       "depend"
     )} on this package${count > averages.dependents ? "\n(above average)" : ""}`}>
-    <svg xmlns="http://www.w3.org/2000/svg" className="inline" width="12" height="12" viewBox="0 0 12 12">
+    <svg xmlns="http://www.w3.org/2000/svg" className="inline fill-current" width="12" height="12" viewBox="0 0 12 12">
       <path
         d="M5.49999938,1.5081529e-06 C5.39771197,1.5081529e-06 5.29651854,0.0249123286 5.20489747,0.0755206269 L0.295238654,2.78293348 C0.111586263,2.88428118 0,3.07989668 0,3.28285431 L0,8.71642868 C0,8.91964853 0.111723011,9.1052997 0.295238654,9.20704073 L5.20489747,11.9237624 C5.38739703,12.0254125 5.61273847,12.0254125 5.79523803,11.9237624 L10.7048968,9.20704073 C10.8878518,9.10601798 11.0004325,8.91885052 10.9999988,8.71642868 L10.9999988,3.28285431 C10.9999988,3.07963446 10.8884125,2.88428118 10.7048968,2.78293348 L5.79523803,0.0755206269 C5.70549329,0.02582561 5.60363639,-0.00022837378 5.49999938,1.5081529e-06 L5.49999938,1.5081529e-06 Z"/>
     </svg>
@@ -89,10 +89,10 @@ const Dependents = ({count}) => (
 
 const CompatibilityIcon = ({label, children}) => (
   <span
-    className="mr-2 tooltipped tooltipped-s tooltipped-no-delay inline-flex items-center"
+    className="mr-2 tooltipped tooltipped-s tooltipped-no-delay inline items-center fill-current"
     aria-label={label}
     style={{verticalAlign: -3}}>
-    <svg xmlns="http://www.w3.org/2000/svg" className="inline" width="18" height="18" viewBox="0 0 18 18">
+    <svg xmlns="http://www.w3.org/2000/svg" className="inline fill-current" width="18" height="18" viewBox="0 0 18 18">
       {children}
     </svg>
   </span>
@@ -148,7 +148,7 @@ const ExternalLinks = ({name, homepage, repositoryUrl, donationUrl}) => (
           width="16"
           height="16"
           viewBox="0 0 24 24"
-          className="inline"
+          className="inline fill-current"
           style={{verticalAlign: -2}}>
           <path
             d="M11,24 L11,20.978 L10,20.978 L10,24 L8,24 L8,20.978 L3.031,20.978 L3.531,18 L4.61,18 C5.494,18 6,17.149 6,16.293 L6,7.404 C6,6.571 5.515,6 4.635,6 L3,6 L3,3 L8,3 L8,0 L10,0 L10,3 L11,3 L11,0 L13,0 L13,3.053 C17.315,3.199 19.024,4.834 19.514,6.678 C20.094,8.858 18.657,10.688 17.421,11.134 C18.922,11.516 21,12.625 21,15.184 C21,18.667 18.312,21 13,21 L13,24 L11,24 Z M10,12.994 L10,18 C13.969,18 16.688,17.625 16.688,15.484 C16.688,13.188 13.75,12.994 10,12.994 Z M10,11 C12.211,11 15.578,10.844 15.578,8.5 C15.578,6.5 13.5,6 10,6 L10,11 Z"/>
@@ -256,7 +256,8 @@ const Hit = ({hit, location, expanded}) => {
         )}
         <div className="text-grey-darker">
           <Link
-            href={'/package/' + hit.name}
+            as={'/package/' + hit.name}
+            href={'/package?package_user=' + hit.name}
             passHref
           >
             <a

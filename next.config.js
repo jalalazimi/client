@@ -4,8 +4,9 @@ const withBundleAnalyzer = require("@zeit/next-bundle-analyzer");
 const withOffline = require('next-offline');
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const dev = process.env.NODE_ENV !== 'production';
+const withPurgeCss = require('next-purgecss');
 const webpack = require('webpack');
+const dev = process.env.NODE_ENV !== 'production';
 require('dotenv').config()
 
 const bundleAnalyzerConfig = {
@@ -89,7 +90,9 @@ module.exports = compose([
   [withCSS],
   [withOffline, offlineConfig],
   [withBundleAnalyzer, bundleAnalyzerConfig],
-
+  [withPurgeCss, {
+    purgeCssEnabled: ({dev, isServer}) => (!dev && !isServer) // Only enable PurgeCSS for client-side production builds
+  }],
   {
     webpack: (config, {defaultLoaders}) => {
 

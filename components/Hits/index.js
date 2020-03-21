@@ -1,11 +1,11 @@
 import React from "react";
-import { connectInfiniteHits, connectStateResults } from "react-instantsearch-dom";
-
+import { connectHits, connectStateResults } from "react-instantsearch-dom";
+import Pagination from "./Pagination"
 import humanizedNumber from "./humanizedNumber";
 import Hit from "./Hit";
 
 const NoResults = connectStateResults(
-  ({ searchState, searchResults }) =>
+  ({searchState, searchResults}) =>
     searchResults &&
     searchResults.nbHits === 0 && (
       <div className="bg-white text-black p-3 text-grey-dark text-xl w-full">
@@ -14,28 +14,14 @@ const NoResults = connectStateResults(
     )
 );
 
-const Delimiter = connectStateResults(
-  ({ index, searchResults }) =>
-    (index + 1) % searchResults.hitsPerPage === 0 ? (
-      <div className="relative border-b text-grey my-2" data-count={humanizedNumber(index + 1)} />
-    ) : null
-);
-
-const Hits = connectInfiniteHits(({ hits, hasMore, refine }) => (
-  <div>
-    <NoResults />
-
-    {hits.map((hit, index) => [
-      <Hit hit={hit} key={hit.objectID} />,
-      <Delimiter key={`delimiter-${hit.objectID}`} index={index} />,
+const Hits = connectHits(({hits}) => (
+  <>
+    <NoResults/>
+    {hits.map((hit) => [
+      <Hit hit={hit} key={hit.objectID}/>,
     ])}
-
-    {hasMore && (
-      <button className="btn btn-secondary p-3 mt-3 w-full" onClick={refine} disabled={!hasMore}>
-        Load More
-      </button>
-    )}
-  </div>
+    <Pagination/>
+  </>
 ));
 
 export default Hits;

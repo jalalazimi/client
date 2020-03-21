@@ -1,5 +1,5 @@
 import React from 'react'
-import { Configure, InstantSearch } from "react-instantsearch-dom";
+import { Configure, InstantSearch, ScrollTo } from "react-instantsearch-dom";
 import get from "lodash.get";
 
 import Search from "../search";
@@ -48,13 +48,14 @@ function Algolia(props) {
     {...props}
   >
     <Configure attributesToRetrieve={attributesToRetrieve}/>
-    <Search
-      sortOptions={sortOptions}
-      collectionsOrder={collectionsOrder}
-      currentCollection={currentCollection}
-      currentQuery={currentQuery}
-      isHome={false}
-    />
+    <ScrollTo>
+      <Search
+        sortOptions={sortOptions}
+        collectionsOrder={collectionsOrder}
+        currentCollection={currentCollection}
+        currentQuery={currentQuery}
+      />
+    </ScrollTo>
   </InstantSearch>
 }
 

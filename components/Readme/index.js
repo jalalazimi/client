@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import { connectStateResults } from 'react-instantsearch-dom';
 import { Helmet } from "react-helmet";
-import "github-markdown-css";
 
 import Hit from "../Hits/Hit";
-import "./Readme.css";
 
 const MetaTags = hit => (
   <Helmet>

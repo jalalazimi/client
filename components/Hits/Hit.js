@@ -3,13 +3,11 @@ import TimeAgo from "timeago-react";
 import { format } from 'timeago.js';
 import Dropdown, { DropdownTrigger, DropdownContent } from "react-simple-dropdown";
 import qs from "qs";
-import "primer-tooltips/build/build.css";
 import licenseUrl from "./license";
 import pluralize from "./pluralize";
 import humanizedNumber from "./humanizedNumber";
 import Link from 'next/link'
 import { Highlight } from 'react-instantsearch-dom';
-import "react-simple-dropdown/styles/Dropdown.css";
 
 // Get these averages from the backend with `Package.published.average("stars")`
 // A package is considered popular if any of the stats is above average

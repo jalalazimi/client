@@ -3,6 +3,7 @@ import { Configure, InstantSearch, ScrollTo } from "react-instantsearch-dom";
 import get from "lodash.get";
 
 import Search from "../search";
+import Topbar from "../Topbar";
 
 const attributesToRetrieve = [
   "categories",
@@ -34,9 +35,8 @@ const sortOptions = [
 const collectionsOrder = ["React", "React Native", "React VR", "Webpack", "Babel", "PostCSS"];
 
 function Algolia(props) {
-
   const currentCollection = get(props, 'searchState.menu.collections');
-  const currentQuery = get(props, 'searchState.query');
+  const currentQuery = get(props, 'searchState.search');
 
   return <InstantSearch
     searchClient={props.searchClient}
@@ -49,6 +49,7 @@ function Algolia(props) {
   >
     <Configure attributesToRetrieve={attributesToRetrieve}/>
     <ScrollTo>
+      <Topbar/>
       <Search
         sortOptions={sortOptions}
         collectionsOrder={collectionsOrder}

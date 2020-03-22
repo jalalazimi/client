@@ -26,7 +26,7 @@ export default class MyDocument extends Document {
         <meta name="apple-mobile-web-app-status-bar-style" content="#181f2c"/>
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-71724704-1"/>
       </Head>
-      <body>
+      <body className="overflow-x-hidden">
       <Main/>
       <NextScript/>
       </body>

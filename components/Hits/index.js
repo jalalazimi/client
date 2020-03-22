@@ -20,7 +20,7 @@ const Hits = connectHits(({hits}) => (
     {hits.map((hit) => [
       <Hit hit={hit} key={hit.objectID}/>,
     ])}
-    <Pagination/>
+    <Pagination number={4}/>
   </>
 ));
 

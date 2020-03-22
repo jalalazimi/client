@@ -9,7 +9,6 @@ import pickBy from "lodash.pickby";
 import qs from "qs";
 
 import Algolia from '../components/Algolia';
-import Topbar from "../components/Topbar";
 
 const searchClient = algoliasearch(process.env.REACT_APP_ALGOLIA_APP_ID, process.env.REACT_APP_ALGOLIA_API_KEY,);
 const updateAfter = 700;
@@ -88,7 +87,6 @@ class Home extends React.PureComponent {
   render() {
 
     return <div className="min-h-screen font-sans tracking-tight">
-      <Topbar/>
       <Algolia
         {...DEFAULT_PROPS}
         onSearchStateChange={this.onSearchStateChange}

@@ -34,6 +34,7 @@
     "react-helmet": "^5.2.1",
     "react-instantsearch": "^6.4.0",
     "react-instantsearch-dom": "^6.4.0",
+    "react-js-pagination": "^3.0.3",
     "react-router-dom": "^5.1.2",
     "react-simple-dropdown": "^3.2.3",
     "tailwindcss": "^1.2.0",
@@ -67,6 +68,7 @@
     "eject": "react-scripts eject",
     "dev": " PORT=3006 next dev",
     "dev-server": "nodemon server",
+    "serve": "NODE_ENV=production next build && nodemon server",
     "next-build": "NODE_ENV=production next build",
     "analyze": "cross-env BUNDLE_ANALYZE=both next build"
   },

@@ -30,3 +30,17 @@ ul.ais-Pagination-list .ais-Pagination-item--disabled {
 ul.ais-Pagination-list .ais-Pagination-item--selected {
     background-color: #fec93e !important;
 }
+
+
+mark {
+    background-color: inherit !important;
+    color: inherit !important;
+}
+
+.overflow-x-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.overflow-x-scroll {
+    -ms-overflow-style: none;
+}

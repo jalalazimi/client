@@ -1,17 +1,19 @@
 import React from 'react'
-import App from 'next/app'
+import "github-markdown-css";
+import "primer-tooltips/build/build.css";
+import "react-simple-dropdown/styles/Dropdown.css";
 import '../css/tailwind.css'
 import '../css/app.css'
+import '../css/advertisement.css'
+import '../css/readme.css'
 
-class MyApp extends App {
-  render() {
-    const {Component, pageProps, store} = this.props;
-    return (
-      <>
-        <Component {...pageProps} />
-      </>
-    )
-  }
+function MyApp(props) {
+  const {Component, pageProps} = props;
+  return (
+    <>
+      <Component {...pageProps} />
+    </>
+  )
 }
 
 export default MyApp;

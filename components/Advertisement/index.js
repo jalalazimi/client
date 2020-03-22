@@ -1,14 +1,12 @@
 import React, { Component } from "react";
 
-import "./Advertisement.css";
-
 let initialized = process.env.REACT_APP_SHOW_ADS !== "true";
 let pageViews = 0;
 
 class Index extends Component {
   constructor(props) {
     super(props);
-    this.state = { initialized: false };
+    this.state = {initialized: false};
   }
 
   componentDidMount() {

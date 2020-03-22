@@ -1,4 +1,3 @@
-const withCSS = require('@zeit/next-css');
 const compose = require('next-compose');
 const withBundleAnalyzer = require("@zeit/next-bundle-analyzer");
 const withOffline = require('next-offline');
@@ -26,10 +25,9 @@ const bundleAnalyzerConfig = {
 
 const offlineConfig = {
   workboxOpts: {
-    importWorkboxFrom: 'local',
     clientsClaim: true,
     skipWaiting: true,
-    navigateFallbackBlacklist: [
+    navigateFallbackDenylist: [
       new RegExp('^/_'),
       new RegExp('^\\/api'),
       new RegExp('/[^/]+\\.[^/]+$'),
@@ -87,7 +85,6 @@ const offlineConfig = {
 };
 
 module.exports = compose([
-  [withCSS],
   [withOffline, offlineConfig],
   [withBundleAnalyzer, bundleAnalyzerConfig],
   [withPurgeCss, {

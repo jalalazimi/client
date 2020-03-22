@@ -1,13 +1,23 @@
 import React from "react";
 
-const Index = () => (
-  <header className="bg-orange-light flex items-center h-10 px-2 select-none">
-    <a href="/" className="no-underline text-black p-2">
-      <h1 className="text-xl font-bold">JS.coach</h1>
-    </a>
-
+const Index = () => {
+  return <header
+    className="flex bg-orange-light items-center h-10 px-2 select-none">
+    <div className="flex items-center flex-shrink-0 text-white mr-6">
+      <a href="/" className="no-underline text-black p-2">
+        <h1 className="text-xl font-bold">JS.coach</h1>
+      </a>
+    </div>
     <div className="flex-1"/>
-    <ul className="flex">
+    <div className="block lg:hidden">
+      <button
+        className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
+        <svg className="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+        </svg>
+      </button>
+    </div>
+    <ul className="hidden md:flex">
       <li className="mr-6">
         <a
           href="https://github.com/jscoach/support/blob/master/CONTRIBUTING.md"
@@ -49,6 +59,6 @@ const Index = () => (
       </li>
     </ul>
   </header>
-);
+};
 
 export default Index;

@@ -8,6 +8,7 @@
     "algoliasearch": "^4.1.0",
     "autoprefixer": "^9.7.4",
     "axios": "^0.19.2",
+    "classnames": "^2.2.6",
     "compression": "latest",
     "core-js": "^3.6.4",
     "dotenv": "^8.2.0",

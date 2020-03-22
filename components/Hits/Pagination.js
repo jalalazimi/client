@@ -24,6 +24,14 @@ const Pagination = ({currentRefinement, nbPages, refine, createURL, router}) => 
       getPageUrl={getPageUrl}
       pageRangeDisplayed={5}
       onChange={handlePageChange}
+      prevPageText={<svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="2" fill="none"
+                         strokeLinecap="round" strokeLinejoin="round" className="css-i6dzq1">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>}
+      nextPageText={<svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="2" fill="none"
+                         strokeLinecap="round" strokeLinejoin="round" className="css-i6dzq1">
+        <polyline points="9 18 15 12 9 6"/>
+      </svg>}
     />
   );
 };

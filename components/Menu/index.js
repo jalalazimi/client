@@ -1,25 +1,25 @@
 import React from "react";
 import { connectMenu } from "react-instantsearch-dom";
 
-const MenuItem = ({ label, value, count, isRefined, refine, createURL }) => (
+const MenuItem = ({label, value, count, isRefined, refine, createURL}) => (
   <a
     href={createURL(value)}
     onClick={e => {
       e.preventDefault();
       refine(value);
     }}
-    className="block no-underline text-black mb-2"
+    className="block no-underline text-gray-800 mb-2 rounded hover:text-gray-900"
     key={label}>
     <span className={`mr-2 ${isRefined && "font-bold"}`}>{label}</span>
     {count > 0 && (
-      <span className="px-2 rounded-full bg-grey-light text-grey-dark text-sm">{count}</span>
+      <span className="px-2 rounded-full bg-gray-200 text-gray-900 text-sm">{count}</span>
     )}
   </a>
 );
 
-const Index = ({ attribute, currentRefinement, items, ...otherProps }) => (
-  <div>
-    {items.length === 0 && <span className="text-grey-dark">No filters available</span>}
+const Index = ({attribute, currentRefinement, items, ...otherProps}) => (
+  <>
+    {items.length === 0 && <span className="text-gray-800">No filters available</span>}
 
     {items.length > 0 && (
       <MenuItem
@@ -31,7 +31,7 @@ const Index = ({ attribute, currentRefinement, items, ...otherProps }) => (
     )}
 
     {items.map(item => <MenuItem key={item.label} {...otherProps} {...item} />)}
-  </div>
+  </>
 );
 
 export default connectMenu(Index);

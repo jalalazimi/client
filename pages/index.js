@@ -86,7 +86,7 @@ class Home extends React.PureComponent {
 
   render() {
 
-    return <div className="min-h-screen font-sans tracking-tight">
+    return <div className="min-h-screen font-sans tracking-tight w-full">
       <Algolia
         {...DEFAULT_PROPS}
         onSearchStateChange={this.onSearchStateChange}

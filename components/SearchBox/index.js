@@ -11,7 +11,7 @@ const SearchBox = connectSearchBox(({currentRefinement, refine}) => {
       action=""
       className="md:ml-16 bg-white rounded py-2 px-3 h-12 flex items-center shadow"
       role="search">
-      <button type="submit" className="leading-none text-grey" title="Submit your search query">
+      <button type="submit" className="leading-none text-gray-600" title="Submit your search query">
         <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18"
              className="fill-current inline">
           <path

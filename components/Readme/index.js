@@ -2,7 +2,14 @@ import React, { Component } from "react";
 import { connectStateResults } from 'react-instantsearch-dom';
 import { Helmet } from "react-helmet";
 
-import Hit from "../Hits/Hit";
+import Hit from "../Hits/ExpandedHit";
+import License from "../Hits/License";
+import Stars from "../Hits/Stars";
+import Downloads from "../Hits/Downloads";
+import Dependents from "../Hits/Dependents";
+import CompatibilityIcons from "../Hits/CompatibilityIcons";
+import TimeAgo from "timeago-react";
+import { format } from "timeago.js";
 
 const MetaTags = hit => (
   <Helmet>
@@ -21,26 +28,13 @@ const NotFound = () => (
   <div
     className="relative select-none text-center"
     style={{top: "50%", transform: "translateY(-50%)"}}>
-    <strong className="block text-2xl text-grey-light">404</strong>
-    <span className="text-grey-dark text-xl">Página não encontrada</span>
+    <strong className="block text-2xl text-gray-300">404</strong>
+    <span className="text-gray-900 text-xl">Página não encontrada</span>
   </div>
 );
 
 class Readme extends Component {
-  handleDismiss = e => {
-    e.preventDefault();
 
-    this.enableScroll();
-
-    this.props.history.push({
-      pathname: "/",
-      search: this.props.location.search,
-    });
-  };
-
-  handleClick = e => {
-    e.stopPropagation();
-  };
 
   render() {
     const {searchResults, id, searching} = this.props;
@@ -52,37 +46,33 @@ class Readme extends Component {
       }`;
     }
 
-    return (
-      <div className="inset-0 overflow-auto z-30 cursor-pointer" onClick={this.handleDismiss}>
-        <div className=" bg-grey-800 inset-0 pointer-events-none" style={{opacity: 0.9}}/>
-
+    return (<>
         {!searching && !hit && <NotFound/>}
-
-        {hit && (
-          <div
-            className="relative"
-            onClick={this.handleClick}
-          >
-            <Hit hit={hit} expanded/>
-
-            <div className="p-8 bg-white container mx-auto">
-              <div dangerouslySetInnerHTML={{__html: hit && hit.readme}}/>
-              {hit.readmeWasTruncated && (
-                <div className="pt-6">
-                  <a
-                    className="btn btn-secondary p-3 w-full"
-                    href={hit.repositoryUrl}
-                    target="_blank">
-                    Read more
-                  </a>
+        {hit && (<div className="relative container mx-auto">
+            <div className="flex">
+              <div className="w-8/12">
+                <div className="p-6 border-r border-gray-100 border-solid">
+                  <div dangerouslySetInnerHTML={{__html: hit && hit.readme}}/>
+                  {hit.readmeWasTruncated && (
+                    <div className="pt-6">
+                      <a
+                        className="btn btn-secondary p-3 w-full"
+                        href={hit.repositoryUrl}
+                        target="_blank">
+                        Read more
+                      </a>
+                    </div>
+                  )}
                 </div>
-              )}
+              </div>
+              <div className="w-4/12">
+                <Hit hit={hit}/>
+                <MetaTags {...hit} />
+              </div>
             </div>
-
-            <MetaTags {...hit} />
           </div>
         )}
-      </div>
+      </>
     );
   }
 }

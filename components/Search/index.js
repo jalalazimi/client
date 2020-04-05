@@ -13,36 +13,38 @@ import Advertisement from "../Advertisement";
 
 function Search({currentCollection, currentQuery, collectionsOrder, sortOptions}) {
   return <>
-    <div className="bg-grey-lighter border-b border-grey-light  overflow-hidden">
-      <div className="relative m-4 mb-1 select-none">
-        <a href="/" className="hidden md:inline">
-          <img
-            src="images/jess-small.svg"
-            width="50"
-            height="50"
-            className="absolute left-0 inline"
-            draggable="false"
-            alt="Coach Jess welcomes you!"
-          />
-        </a>
-        <div className="max-w-2xl">
-          <SearchBox/>
-          <div className="md:ml-16 mt-6 overflow-x-scroll whitespace-no-wrap">
-            <Tabs
-              attribute="collections"
-              items={collectionsOrder}
-              transformItems={items =>
-                items.sort(
-                  (a, b) => collectionsOrder.indexOf(a.label) > collectionsOrder.indexOf(b.label)
-                )
-              }
+    <div className="bg-gray-200 border-b border-gray-300  overflow-hidden">
+      <div className="container mx-auto">
+        <div className="relative m-4 mb-0 select-none">
+          <a href="/" className="hidden md:inline">
+            <img
+              src="images/jess-small.svg"
+              width="50"
+              height="50"
+              className="absolute left-0 inline"
+              draggable="false"
+              alt="Coach Jess welcomes you!"
             />
-            <ClearAll/>
+          </a>
+          <div className="max-w-2xl">
+            <SearchBox/>
+            <div className="md:ml-16 mt-6 overflow-x-scroll whitespace-no-wrap">
+              <Tabs
+                attribute="collections"
+                items={collectionsOrder}
+                transformItems={items =>
+                  items.sort(
+                    (a, b) => collectionsOrder.indexOf(a.label) > collectionsOrder.indexOf(b.label)
+                  )
+                }
+              />
+              <ClearAll/>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div className="flex p-4 pt-3">
+    <div className="flex p-4 pt-3 container mx-auto">
       <div className="md:ml-16 max-w-2xl w-full">
         <SortBy
           items={sortOptions}

@@ -8,9 +8,9 @@ const TabItem = ({label, value, isRefined, refine, createURL}) => (
       e.preventDefault();
       refine(value);
     }}
-    className="no-underline text-black mb-2 inline-block"
+    className={`no-underline text-black pb-2 border-b border-transparent inline-block hover:border-orange-500 ${isRefined && "font-bold border-orange-700"}`}
     key={label}>
-    <span className={`mx-2 ${isRefined && "font-bold"}`}>{label}</span>
+    <span className={`mx-2`}>{label}</span>
   </a>
 );
 

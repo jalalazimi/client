@@ -31,7 +31,6 @@ ul.ais-Pagination-list .ais-Pagination-item--selected {
     background-color: #fec93e !important;
 }
 
-
 mark {
     background-color: inherit !important;
     color: inherit !important;
@@ -43,4 +42,8 @@ mark {
 
 .overflow-x-scroll {
     -ms-overflow-style: none;
+}
+
+.code {
+    background: #141718;
 }

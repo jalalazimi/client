@@ -1,1 +1,3 @@
-export default (count, singular, plural = `${singular}s`) => (count === 1 ? singular : plural);
+export default function pluralize (count, singular, plural = `${singular}s`) {
+  return count === 1 ? singular : plural
+}

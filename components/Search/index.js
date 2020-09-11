@@ -1,21 +1,21 @@
-import React from "react";
-import ClearAll from "../ClearAll";
-import Hits from "../Hits";
-import Menu from "../Menu";
-import Panel from "../Panel";
-import CheckboxList from "../CheckboxList";
-import SearchBox from "../SearchBox";
-import SearchPoweredBy from "../SearchPoweredBy";
-import SortBy from "../SortBy";
-import Tabs from "../Tabs";
-import orderBy from "lodash.orderby";
-import Advertisement from "../Advertisement";
+import React from 'react'
+import ClearAll from '../ClearAll'
+import Hits from '../Hits'
+import Menu from '../Menu'
+import Panel from '../Panel'
+import CheckboxList from '../CheckboxList'
+import SearchBox from '../SearchBox'
+import SearchPoweredBy from '../SearchPoweredBy'
+import SortBy from '../SortBy'
+import Tabs from '../Tabs'
+import orderBy from 'lodash.orderby'
+import Advertisement from '../Advertisement'
 
-function Search({currentCollection, currentQuery, collectionsOrder, sortOptions}) {
+function Search ({ currentCollection, currentQuery, collectionsOrder, sortOptions }) {
   return <>
     <div className="bg-gray-200 border-b border-gray-300  overflow-hidden">
       <div className="container mx-auto">
-        <div className="relative m-4 mb-0 select-none">
+        <div className="relative mt-4 select-none">
           <a href="/" className="hidden md:inline">
             <img
               src="images/jess-small.svg"
@@ -26,9 +26,11 @@ function Search({currentCollection, currentQuery, collectionsOrder, sortOptions}
               alt="Coach Jess welcomes you!"
             />
           </a>
-          <div className="max-w-2xl">
+          <div className="max-w-2xl m-4">
             <SearchBox/>
-            <div className="md:ml-16 mt-6 overflow-x-scroll whitespace-no-wrap">
+          </div>
+          <div className="w-full">
+            <div className="md:ml-20 mt-6 overflow-x-scroll whitespace-no-wrap">
               <Tabs
                 attribute="collections"
                 items={collectionsOrder}

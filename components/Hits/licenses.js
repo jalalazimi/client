@@ -34,9 +34,9 @@ const chooseLicense = [
 
 /* If a license is explained on choosealicense.com by GitHub, return that link.
  * Otherwise link to the official spdx website. */
-export default spdxId => {
+export default function licences (spdxId) {
   if (chooseLicense.includes(spdxId.toLowerCase())) {
-    return `https://choosealicense.com/licenses/${spdxId.toLowerCase()}`;
+    return `https://choosealicense.com/licenses/${spdxId.toLowerCase()}`
   }
-  return `https://spdx.org/licenses/${spdxId}.html`;
+  return `https://spdx.org/licenses/${spdxId}.html`
 };
